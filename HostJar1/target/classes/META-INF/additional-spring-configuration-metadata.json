@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "-Djavax.net.ssl.trustStorePassword",
+  "type": "java.lang.String",
+  "description": "A description for '-Djavax.net.ssl.trustStorePassword'"
+}]}

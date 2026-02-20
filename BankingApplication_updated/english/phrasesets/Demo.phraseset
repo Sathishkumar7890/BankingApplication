@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<phraseset audiolocation="internal" filename="Demo" version="1.0">
+    <phrase version="1.0">
+        <displayname>Demo</displayname>
+        <talent/>
+        <phrasetext/>
+        <basetext/>
+        <searchkeywords/>
+        <comments/>
+        <audiofile>COLLECT_OTP.wav</audiofile>
+    </phrase>
+</phraseset>

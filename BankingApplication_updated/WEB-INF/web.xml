@@ -1,0 +1,1382 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+This XML descriptor is automatically generated and managed by the
+application development environment.  While manual updates to this 
+file may be preserved, it is best to manage this file through the application development environment tool.
+
+Copyright 2004-2021 Avaya Inc.
+--><web-app id="WebApp_ID" version="3.0">
+    <context-param>
+        <param-name>sage.startlanguage</param-name>
+        <param-value>english</param-value>
+        <description>The starting language for the application.</description>
+    </context-param>
+    <context-param>
+        <param-name>sage.ic.throwexceptions</param-name>
+        <param-value>true</param-value>
+        <description>IC Throw Runtime Exception on Error{true|false}</description>
+    </context-param>
+    <context-param>
+        <param-name>sage.cti.autoinvoke.callinfo</param-name>
+        <param-value>true</param-value>
+        <description>CTI Auto invoke CallInfo upon app start{true|false}</description>
+    </context-param>
+    <context-param>
+        <param-name>PropertyFile</param-name>
+        <param-value>D:/Banking_Project/Config/Config.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>runtime-ASR</param-name>
+        <param-value>Desktop Microsoft Speech SAPI</param-value>
+        <description>Runtime ASR {SRGS-Literals|SRGS-SISR|Nuance OSR|IBM|...}</description>
+    </context-param>
+    <context-param>
+        <param-name>runtime-SSML</param-name>
+        <param-value>true</param-value>
+        <description>Runtime SSML Generation {true|false} - "true" enables SSML generation, "false" disables.</description>
+    </context-param>
+    <context-param>
+        <param-name>runtime-nature</param-name>
+        <param-value>speech</param-value>
+        <description>Application nature, speech or message</description>
+    </context-param>
+    <context-param>
+        <param-name>runtime-Platform</param-name>
+        <param-value>Desktop</param-value>
+        <description>Runtime Platform {Desktop|Experience Portal|Other|IR|MPS}</description>
+    </context-param>
+    <context-param>
+        <param-name>runtime-VXML-Compatibility</param-name>
+        <param-value>2.1</param-value>
+        <description>2.1 + IVVR, 2.1 Allows VXML 2.1 extensions, 2.0 Uses VXML 2.0 Only</description>
+    </context-param>
+    <context-param>
+        <param-name>runtime-DTMF-Native</param-name>
+        <param-value>LOCAL_SRGS_LITERALS</param-value>
+        <description>(NATIVE|LOCAL_SRGS_SISR|LOCAL_SRGS_LITERALS, NATIVE means DTMF Grammars are in native asr format.</description>
+    </context-param>
+    <context-param>
+        <param-name>allow-html-mode</param-name>
+        <param-value>false</param-value>
+        <description>Allows html mode in speech applications.</description>
+    </context-param>
+    <context-param>
+        <param-name>CollectionSeparator</param-name>
+        <param-value>|</param-value>
+        <description>Collection Separator Char</description>
+    </context-param>
+    <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>data/ddlog4j2.xml</param-value>
+        <description>Log4j2 Configuration File</description>
+    </context-param>
+    <context-param>
+        <param-name>grammar-caching</param-name>
+        <param-value>none</param-value>
+        <description>Grammar caching mode, none=no caching, default=system default or property setting</description>
+    </context-param>
+    <servlet id="avayadefaultdisconnecthandler-servlet">
+        <servlet-name>AvayaDefaultDisconnectHandler</servlet-name>
+        <servlet-class>com.avaya.sce.runtime.DefaultDisconnect</servlet-class>
+    </servlet>
+    <servlet id="avayadefaultexithandler-servlet">
+        <servlet-name>AvayaDefaultExitHandler</servlet-name>
+        <servlet-class>com.avaya.sce.runtime.DefaultExit</servlet-class>
+    </servlet>
+    <servlet id="avayasessiontermination-servlet">
+        <servlet-name>AvayaSessionTerminationServlet</servlet-name>
+        <servlet-class>com.avaya.sce.runtime.AvayaSessionTerminationServlet</servlet-class>
+    </servlet>
+    <servlet id="CheckAdminVariableInfo-servlet">
+        <servlet-name>CheckAdminVariableInfoServlet</servlet-name>
+        <servlet-class>com.avaya.sce.runtimecommon.CheckAdminVariableInfo</servlet-class>
+    </servlet>
+    <servlet id="avayareturnerrorhandler-servlet">
+        <servlet-name>AvayaReturnErrorHandler</servlet-name>
+        <servlet-class>com.avaya.sce.runtime.ReturnErrorHandlerServlet</servlet-class>
+    </servlet>
+    <servlet id="avayareturnerrorthrow-servlet">
+        <servlet-name>AvayaReturnErrorThrow</servlet-name>
+        <servlet-class>com.avaya.sce.runtime.ReturnErrorThrowServlet</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_1">
+        <servlet-name>AppRoot</servlet-name>
+        <servlet-class>flow.AppRoot</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_0">
+        <servlet-name>Start</servlet-name>
+        <servlet-class>flow.Start</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_1">
+        <servlet-name>RMN_Identification-Begin</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_63">
+        <servlet-name>RMN_Identification</servlet-name>
+        <servlet-class>flow.RMN_Identification</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_22">
+        <servlet-name>RMN_Identification-RMNLoadValues</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.RMNLoadValues</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_51">
+        <servlet-name>RMN_Identification-Collect_cc_or_Acc</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Collect_cc_or_Acc</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_96">
+        <servlet-name>RMN_Identification-Validate</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Validate</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_IdentificationRMN_1">
+        <servlet-name>IdentificationRMN-Begin</servlet-name>
+        <servlet-class>flow.subflow.IdentificationRMN.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_IdentificationRMN_7">
+        <servlet-name>IdentificationRMN-End</servlet-name>
+        <servlet-class>flow.subflow.IdentificationRMN.End</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_IdentificationRMN_10">
+        <servlet-name>IdentificationRMN-MEN003</servlet-name>
+        <servlet-class>flow.subflow.IdentificationRMN.MEN003</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_113">
+        <servlet-name>RMN_Identification-CC_OR_ACC_MENU</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.CC_OR_ACC_MENU</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_130">
+        <servlet-name>RMN_Identification-ExitCC_OR_AccMenu</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.ExitCC_OR_AccMenu</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_137">
+        <servlet-name>RMN_Identification-ExitPC001</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.ExitPC001</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_147">
+        <servlet-name>RMN_Identification-CheckIdentificationFlag</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.CheckIdentificationFlag</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_155">
+        <servlet-name>RMN_Identification-Identified</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Identified</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_157">
+        <servlet-name>RMN_Identification-Not_Identified</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Not_Identified</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_160">
+        <servlet-name>RMN_Identification-PC001</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.PC001</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_138">
+        <servlet-name>OTP_Authentication</servlet-name>
+        <servlet-class>flow.OTP_Authentication</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_154">
+        <servlet-name>TPIN_Authentication</servlet-name>
+        <servlet-class>flow.TPIN_Authentication</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_1">
+        <servlet-name>Identification-Begin</servlet-name>
+        <servlet-class>flow.subflow.Identification.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_1">
+        <servlet-name>NRMN_Identification-Begin</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_195">
+        <servlet-name>NRMN_Identification-NRMN_IDENTIFICATION</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.NRMN_IDENTIFICATION</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_168">
+        <servlet-name>NRMN_Identification-ValidaAccountNummer</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.ValidaAccountNummer</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_173">
+        <servlet-name>NRMN_Identification-InvalidAccNumber</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.InvalidAccNumber</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_176">
+        <servlet-name>NRMN_Identification-NINM</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.NINM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_181">
+        <servlet-name>NRMN_Identification-ValidateAccountNumber</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.ValidateAccountNumber</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_185">
+        <servlet-name>NRMN_Identification-FetchAuth</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.FetchAuth</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_218">
+        <servlet-name>NRMN_Identification-nextNode</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.nextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_188">
+        <servlet-name>NRMN_Identification-CheckAccNo</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.CheckAccNo</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_220">
+        <servlet-name>NRMN_Identification-ExceedMax</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.ExceedMax</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_159">
+        <servlet-name>NRMN_Identification-NRMN_NINM</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.NRMN_NINM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_1">
+        <servlet-name>TPIN_Authentication-Begin</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_98">
+        <servlet-name>TPIN_Authentication-Tpin_retry</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.Tpin_retry</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_35">
+        <servlet-name>TPIN_Authentication-Fetch</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.Fetch</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_40">
+        <servlet-name>TPIN_Authentication-TpinAPI</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.TpinAPI</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_106">
+        <servlet-name>TPIN_Authentication-exceed</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.exceed</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_175">
+        <servlet-name>TPIN_Authentication-FetchNodeForTpin</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.FetchNodeForTpin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_18">
+        <servlet-name>TPIN_Authentication-TPIN_AUTHENTICATION</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.TPIN_AUTHENTICATION</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_54">
+        <servlet-name>TPIN_Authentication-CheckFlag</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.CheckFlag</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_1">
+        <servlet-name>OTP_Authentication-Begin</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_65">
+        <servlet-name>OTP_Authentication-Success</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Success</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_35">
+        <servlet-name>OTP_Authentication-COLLECT_OTP</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.COLLECT_OTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_67">
+        <servlet-name>OTP_Authentication-CheckOTPStatus</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.CheckOTPStatus</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_4">
+        <servlet-name>OTP_Authentication-End</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.End</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_6">
+        <servlet-name>OTP_Authentication-OTPLoadValues</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.OTPLoadValues</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_11">
+        <servlet-name>OTP_Authentication-Validate</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Validate</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_45">
+        <servlet-name>OTP_Authentication-PC004</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.PC004</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_78">
+        <servlet-name>OTP_Authentication-ReGenerateOTP</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.ReGenerateOTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_19">
+        <servlet-name>OTP_Authentication-Announcement</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Announcement</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_85">
+        <servlet-name>OTP_Authentication-Check</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Check</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_23">
+        <servlet-name>OTP_Authentication-ANN008</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.ANN008</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_58">
+        <servlet-name>OTP_Authentication-ValidateOTP</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.ValidateOTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_28">
+        <servlet-name>OTP_Authentication-OTPFetchNextNode</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.OTPFetchNextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_128">
+        <servlet-name>GeneralMsg-Announce</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.Announce</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_1">
+        <servlet-name>GeneralMsg-Begin</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_132">
+        <servlet-name>GeneralMsg-FETCH_EMG_MSG</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.FETCH_EMG_MSG</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_165">
+        <servlet-name>GeneralMsg-RMN</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.RMN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_166">
+        <servlet-name>GeneralMsg-NRMN</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.NRMN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_137">
+        <servlet-name>GeneralMsg-Emg_Flag</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.Emg_Flag</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_125">
+        <servlet-name>GeneralMsg-FETCH_Node</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.FETCH_Node</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_142">
+        <servlet-name>GeneralMsg-CheckFlag</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.CheckFlag</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_159">
+        <servlet-name>GeneralMsg-IDENTIFICATION</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.IDENTIFICATION</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_164">
+        <servlet-name>GENERAL_MSG</servlet-name>
+        <servlet-class>flow.GENERAL_MSG</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_169">
+        <servlet-name>NRMN_Identification</servlet-name>
+        <servlet-class>flow.NRMN_Identification</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_1">
+        <servlet-name>Authentification-Begin</servlet-name>
+        <servlet-class>flow.subflow.Authentification.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_4">
+        <servlet-name>Authentification-OTP</servlet-name>
+        <servlet-class>flow.subflow.Authentification.OTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_33">
+        <servlet-name>Authentification-Performed_1FA</servlet-name>
+        <servlet-class>flow.subflow.Authentification.Performed_1FA</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_21">
+        <servlet-name>Authentification-TPIN</servlet-name>
+        <servlet-class>flow.subflow.Authentification.TPIN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_6">
+        <servlet-name>Authentification-CheckAuthenticationStatus</servlet-name>
+        <servlet-class>flow.subflow.Authentification.CheckAuthenticationStatus</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_25">
+        <servlet-name>Authentification-Check2FA</servlet-name>
+        <servlet-class>flow.subflow.Authentification.Check2FA</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_42">
+        <servlet-name>Authentification-TwoFAisDone</servlet-name>
+        <servlet-class>flow.subflow.Authentification.TwoFAisDone</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Authentification_13">
+        <servlet-name>Authentification-CheckHasTPIN</servlet-name>
+        <servlet-class>flow.subflow.Authentification.CheckHasTPIN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_175">
+        <servlet-name>AUTHENTICATION</servlet-name>
+        <servlet-class>flow.AUTHENTICATION</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_20">
+        <servlet-name>Identification-NRMN_IDENTIFICATIONN</servlet-name>
+        <servlet-class>flow.subflow.Identification.NRMN_IDENTIFICATIONN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_24">
+        <servlet-name>Identification-RMN_IDENTIFICATION</servlet-name>
+        <servlet-class>flow.subflow.Identification.RMN_IDENTIFICATION</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_28">
+        <servlet-name>Identification-RMN</servlet-name>
+        <servlet-class>flow.subflow.Identification.RMN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_29">
+        <servlet-name>Identification-NRMN</servlet-name>
+        <servlet-class>flow.subflow.Identification.NRMN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_38">
+        <servlet-name>Identification-Validate</servlet-name>
+        <servlet-class>flow.subflow.Identification.Validate</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_42">
+        <servlet-name>Identification-LoadValues</servlet-name>
+        <servlet-class>flow.subflow.Identification.LoadValues</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_1">
+        <servlet-name>DynamicFlow-Begin</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_4">
+        <servlet-name>DynamicFlow-End</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.End</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_38">
+        <servlet-name>DynamicFlow-Dynamic</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.Dynamic</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_7">
+        <servlet-name>DynamicFlow-DynamicNextNode</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.DynamicNextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_12">
+        <servlet-name>DynamicFlow-ANN</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.ANN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_44">
+        <servlet-name>DynamicFlow-ExitMenu</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.ExitMenu</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_16">
+        <servlet-name>DynamicFlow-MEN</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.MEN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_24">
+        <servlet-name>DynamicFlow-Announcement</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.Announcement</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_249">
+        <servlet-name>DynamicNextNode</servlet-name>
+        <servlet-class>flow.DynamicNextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_255">
+        <servlet-name>End</servlet-name>
+        <servlet-class>flow.End</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_278">
+        <servlet-name>ANNOUNCE</servlet-name>
+        <servlet-class>flow.ANNOUNCE</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_296">
+        <servlet-name>RepeatMenu</servlet-name>
+        <servlet-class>flow.RepeatMenu</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_1">
+        <servlet-name>NINM_FLOW-Begin</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_33">
+        <servlet-name>NINM_FLOW-PlayMax</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.PlayMax</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_18">
+        <servlet-name>NINM_FLOW-PlayNI</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.PlayNI</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_50">
+        <servlet-name>NINM_FLOW-playNM</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.playNM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_4">
+        <servlet-name>NINM_FLOW-repeat</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.repeat</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_5">
+        <servlet-name>NINM_FLOW-NINM_CHECK</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.NINM_CHECK</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_39">
+        <servlet-name>NINM_FLOW-exceed</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.exceed</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NINM_FLOW_79">
+        <servlet-name>NINM_FLOW-FetchJson</servlet-name>
+        <servlet-class>flow.subflow.NINM_FLOW.FetchJson</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_227">
+        <servlet-name>NRMN_Identification-ApiRetry</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.ApiRetry</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_99">
+        <servlet-name>OTP_Authentication-OtpRetry</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.OtpRetry</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_1">
+        <servlet-name>NIMM_API-Begin</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_4">
+        <servlet-name>NIMM_API-retry</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.retry</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_13">
+        <servlet-name>NIMM_API-repeat</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.repeat</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_14">
+        <servlet-name>NIMM_API-max</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.max</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_17">
+        <servlet-name>NIMM_API-NM</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.NM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_23">
+        <servlet-name>NIMM_API-Fetch</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.Fetch</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NIMM_API_29">
+        <servlet-name>NIMM_API-maxP</servlet-name>
+        <servlet-class>flow.subflow.NIMM_API.maxP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_365">
+        <servlet-name>CreditCard1</servlet-name>
+        <servlet-class>flow.CreditCard1</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_116">
+        <servlet-name>OTP_Authentication-SuccessOTP</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.SuccessOTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_374">
+        <servlet-name>BankingServices1</servlet-name>
+        <servlet-class>flow.BankingServices1</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_377">
+        <servlet-name>TPIN1</servlet-name>
+        <servlet-class>flow.TPIN1</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_382">
+        <servlet-name>LoadValues</servlet-name>
+        <servlet-class>flow.LoadValues</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_388">
+        <servlet-name>Main_Menu</servlet-name>
+        <servlet-class>flow.Main_Menu</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_204">
+        <servlet-name>TPIN_Authentication-Success</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.Success</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_396">
+        <servlet-name>CheckNode</servlet-name>
+        <servlet-class>flow.CheckNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_400">
+        <servlet-name>Validate</servlet-name>
+        <servlet-class>flow.Validate</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_69">
+        <servlet-name>DynamicFlow-ApiFail</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.ApiFail</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_419">
+        <servlet-name>InsertCallHistory</servlet-name>
+        <servlet-class>flow.InsertCallHistory</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_207">
+        <servlet-name>TPIN_Authentication-setRetry</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.setRetry</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_130">
+        <servlet-name>OTP_Authentication-OtpRetrySet</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.OtpRetrySet</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_167">
+        <servlet-name>RMN_Identification-CCORACCMENU</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.CCORACCMENU</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_177">
+        <servlet-name>RMN_Identification-RetrySet</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.RetrySet</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_185">
+        <servlet-name>RMN_Identification-Maxtries</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Maxtries</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_187">
+        <servlet-name>RMN_Identification-SetRery</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.SetRery</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_197">
+        <servlet-name>RMN_Identification-NINM</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.NINM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_209">
+        <servlet-name>RMN_Identification-NM</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.NM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_79">
+        <servlet-name>DynamicFlow-SetRetrys</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.SetRetrys</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_89">
+        <servlet-name>DynamicFlow-NINM</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.NINM</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_221">
+        <servlet-name>TPIN_Authentication-TpinFailed</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.TpinFailed</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_143">
+        <servlet-name>OTP_Authentication-OtpFailed</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.OtpFailed</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_1">
+        <servlet-name>ApiFail-Begin</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.Begin</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_17">
+        <servlet-name>ApiFail-Transfer</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.Transfer</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_4">
+        <servlet-name>ApiFail-ApiFlagFetch</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.ApiFlagFetch</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_9">
+        <servlet-name>ApiFail-ApiFAILED</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.ApiFAILED</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_11">
+        <servlet-name>ApiFail-Ann</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.Ann</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_DynamicFlow_99">
+        <servlet-name>DynamicFlow-TransferAgent</servlet-name>
+        <servlet-class>flow.subflow.DynamicFlow.TransferAgent</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_30">
+        <servlet-name>ApiFail-Api</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_NRMN_Identification_253">
+        <servlet-name>NRMN_Identification-Api</servlet-name>
+        <servlet-class>flow.subflow.NRMN_Identification.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_39">
+        <servlet-name>ApiFail-ApiFail</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.ApiFail</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_RMN_Identification_222">
+        <servlet-name>RMN_Identification-Api</servlet-name>
+        <servlet-class>flow.subflow.RMN_Identification.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_227">
+        <servlet-name>TPIN_Authentication-Api</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_149">
+        <servlet-name>OTP_Authentication-Api</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_59">
+        <servlet-name>Identification-Api</servlet-name>
+        <servlet-class>flow.subflow.Identification.Api</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_Identification_67">
+        <servlet-name>Identification-end</servlet-name>
+        <servlet-class>flow.subflow.Identification.end</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_GeneralMsg_199">
+        <servlet-name>GeneralMsg-end</servlet-name>
+        <servlet-class>flow.subflow.GeneralMsg.end</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_157">
+        <servlet-name>OTP_Authentication-MaxOTP</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.MaxOTP</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_439">
+        <servlet-name>Disconnect</servlet-name>
+        <servlet-class>flow.Disconnect</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_443">
+        <servlet-name>HangUp</servlet-name>
+        <servlet-class>flow.HangUp</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_447">
+        <servlet-name>Transfer</servlet-name>
+        <servlet-class>flow.Transfer</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_163">
+        <servlet-name>OTP_Authentication-ApiFail01</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.ApiFail01</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_ApiFail_41">
+        <servlet-name>ApiFail-Flag</servlet-name>
+        <servlet-class>flow.subflow.ApiFail.Flag</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_main_470">
+        <servlet-name>GotoTPIN</servlet-name>
+        <servlet-class>flow.GotoTPIN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_176">
+        <servlet-name>OTP_Authentication-TPIN</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.TPIN</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_OTP_Authentication_177">
+        <servlet-name>OTP_Authentication-CheckNextNode</servlet-name>
+        <servlet-class>flow.subflow.OTP_Authentication.CheckNextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_235">
+        <servlet-name>TPIN_Authentication-CheckNextNode</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.CheckNextNode</servlet-class>
+    </servlet>
+    <servlet id="SAGE-callflow-servlet_TPIN_Authentication_244">
+        <servlet-name>TPIN_Authentication-TPIN</servlet-name>
+        <servlet-class>flow.subflow.TPIN_Authentication.TPIN</servlet-class>
+    </servlet>
+    <servlet-mapping id="avayadefaultdisconnecthandler-servletmapping">
+        <servlet-name>AvayaDefaultDisconnectHandler</servlet-name>
+        <url-pattern>/AvayaDefaultDisconnectHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="avayadefaultexithandler-servletmapping">
+        <servlet-name>AvayaDefaultExitHandler</servlet-name>
+        <url-pattern>/AvayaDefaultExitHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="avayasessiontermination-servletmapping">
+        <servlet-name>AvayaSessionTerminationServlet</servlet-name>
+        <url-pattern>/AvayaSessionTerminationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="CheckAdminVariableInfo-servletmapping">
+        <servlet-name>CheckAdminVariableInfoServlet</servlet-name>
+        <url-pattern>/CheckAdminVariableInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="avayareturnerrorhandler-servletmapping">
+        <servlet-name>AvayaReturnErrorHandler</servlet-name>
+        <url-pattern>/AvayaReturnErrorHandler</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="avayareturnerrorthrow-servletmapping">
+        <servlet-name>AvayaReturnErrorThrow</servlet-name>
+        <url-pattern>/AvayaReturnErrorThrow</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_1">
+        <servlet-name>AppRoot</servlet-name>
+        <url-pattern>/AppRoot</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_0">
+        <servlet-name>Start</servlet-name>
+        <url-pattern>/Start</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_1">
+        <servlet-name>RMN_Identification-Begin</servlet-name>
+        <url-pattern>/RMN_Identification-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_63">
+        <servlet-name>RMN_Identification</servlet-name>
+        <url-pattern>/RMN_Identification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_22">
+        <servlet-name>RMN_Identification-RMNLoadValues</servlet-name>
+        <url-pattern>/RMN_Identification-RMNLoadValues</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_51">
+        <servlet-name>RMN_Identification-Collect_cc_or_Acc</servlet-name>
+        <url-pattern>/RMN_Identification-Collect_cc_or_Acc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_96">
+        <servlet-name>RMN_Identification-Validate</servlet-name>
+        <url-pattern>/RMN_Identification-Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_IdentificationRMN_1">
+        <servlet-name>IdentificationRMN-Begin</servlet-name>
+        <url-pattern>/IdentificationRMN-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_IdentificationRMN_7">
+        <servlet-name>IdentificationRMN-End</servlet-name>
+        <url-pattern>/IdentificationRMN-End</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_IdentificationRMN_10">
+        <servlet-name>IdentificationRMN-MEN003</servlet-name>
+        <url-pattern>/IdentificationRMN-MEN003</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_113">
+        <servlet-name>RMN_Identification-CC_OR_ACC_MENU</servlet-name>
+        <url-pattern>/RMN_Identification-CC_OR_ACC_MENU</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_130">
+        <servlet-name>RMN_Identification-ExitCC_OR_AccMenu</servlet-name>
+        <url-pattern>/RMN_Identification-ExitCC_OR_AccMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_137">
+        <servlet-name>RMN_Identification-ExitPC001</servlet-name>
+        <url-pattern>/RMN_Identification-ExitPC001</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_147">
+        <servlet-name>RMN_Identification-CheckIdentificationFlag</servlet-name>
+        <url-pattern>/RMN_Identification-CheckIdentificationFlag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_155">
+        <servlet-name>RMN_Identification-Identified</servlet-name>
+        <url-pattern>/RMN_Identification-Identified</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_157">
+        <servlet-name>RMN_Identification-Not_Identified</servlet-name>
+        <url-pattern>/RMN_Identification-Not_Identified</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_160">
+        <servlet-name>RMN_Identification-PC001</servlet-name>
+        <url-pattern>/RMN_Identification-PC001</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_138">
+        <servlet-name>OTP_Authentication</servlet-name>
+        <url-pattern>/OTP_Authentication</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_154">
+        <servlet-name>TPIN_Authentication</servlet-name>
+        <url-pattern>/TPIN_Authentication</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_1">
+        <servlet-name>Identification-Begin</servlet-name>
+        <url-pattern>/Identification-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_1">
+        <servlet-name>NRMN_Identification-Begin</servlet-name>
+        <url-pattern>/NRMN_Identification-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_195">
+        <servlet-name>NRMN_Identification-NRMN_IDENTIFICATION</servlet-name>
+        <url-pattern>/NRMN_Identification-NRMN_IDENTIFICATION</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_168">
+        <servlet-name>NRMN_Identification-ValidaAccountNummer</servlet-name>
+        <url-pattern>/NRMN_Identification-ValidaAccountNummer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_173">
+        <servlet-name>NRMN_Identification-InvalidAccNumber</servlet-name>
+        <url-pattern>/NRMN_Identification-InvalidAccNumber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_176">
+        <servlet-name>NRMN_Identification-NINM</servlet-name>
+        <url-pattern>/NRMN_Identification-NINM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_181">
+        <servlet-name>NRMN_Identification-ValidateAccountNumber</servlet-name>
+        <url-pattern>/NRMN_Identification-ValidateAccountNumber</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_185">
+        <servlet-name>NRMN_Identification-FetchAuth</servlet-name>
+        <url-pattern>/NRMN_Identification-FetchAuth</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_218">
+        <servlet-name>NRMN_Identification-nextNode</servlet-name>
+        <url-pattern>/NRMN_Identification-nextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_188">
+        <servlet-name>NRMN_Identification-CheckAccNo</servlet-name>
+        <url-pattern>/NRMN_Identification-CheckAccNo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_220">
+        <servlet-name>NRMN_Identification-ExceedMax</servlet-name>
+        <url-pattern>/NRMN_Identification-ExceedMax</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_159">
+        <servlet-name>NRMN_Identification-NRMN_NINM</servlet-name>
+        <url-pattern>/NRMN_Identification-NRMN_NINM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_1">
+        <servlet-name>TPIN_Authentication-Begin</servlet-name>
+        <url-pattern>/TPIN_Authentication-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_98">
+        <servlet-name>TPIN_Authentication-Tpin_retry</servlet-name>
+        <url-pattern>/TPIN_Authentication-Tpin_retry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_35">
+        <servlet-name>TPIN_Authentication-Fetch</servlet-name>
+        <url-pattern>/TPIN_Authentication-Fetch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_40">
+        <servlet-name>TPIN_Authentication-TpinAPI</servlet-name>
+        <url-pattern>/TPIN_Authentication-TpinAPI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_106">
+        <servlet-name>TPIN_Authentication-exceed</servlet-name>
+        <url-pattern>/TPIN_Authentication-exceed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_175">
+        <servlet-name>TPIN_Authentication-FetchNodeForTpin</servlet-name>
+        <url-pattern>/TPIN_Authentication-FetchNodeForTpin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_18">
+        <servlet-name>TPIN_Authentication-TPIN_AUTHENTICATION</servlet-name>
+        <url-pattern>/TPIN_Authentication-TPIN_AUTHENTICATION</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_54">
+        <servlet-name>TPIN_Authentication-CheckFlag</servlet-name>
+        <url-pattern>/TPIN_Authentication-CheckFlag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_1">
+        <servlet-name>OTP_Authentication-Begin</servlet-name>
+        <url-pattern>/OTP_Authentication-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_65">
+        <servlet-name>OTP_Authentication-Success</servlet-name>
+        <url-pattern>/OTP_Authentication-Success</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_35">
+        <servlet-name>OTP_Authentication-COLLECT_OTP</servlet-name>
+        <url-pattern>/OTP_Authentication-COLLECT_OTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_67">
+        <servlet-name>OTP_Authentication-CheckOTPStatus</servlet-name>
+        <url-pattern>/OTP_Authentication-CheckOTPStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_4">
+        <servlet-name>OTP_Authentication-End</servlet-name>
+        <url-pattern>/OTP_Authentication-End</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_6">
+        <servlet-name>OTP_Authentication-OTPLoadValues</servlet-name>
+        <url-pattern>/OTP_Authentication-OTPLoadValues</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_11">
+        <servlet-name>OTP_Authentication-Validate</servlet-name>
+        <url-pattern>/OTP_Authentication-Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_45">
+        <servlet-name>OTP_Authentication-PC004</servlet-name>
+        <url-pattern>/OTP_Authentication-PC004</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_78">
+        <servlet-name>OTP_Authentication-ReGenerateOTP</servlet-name>
+        <url-pattern>/OTP_Authentication-ReGenerateOTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_19">
+        <servlet-name>OTP_Authentication-Announcement</servlet-name>
+        <url-pattern>/OTP_Authentication-Announcement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_85">
+        <servlet-name>OTP_Authentication-Check</servlet-name>
+        <url-pattern>/OTP_Authentication-Check</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_23">
+        <servlet-name>OTP_Authentication-ANN008</servlet-name>
+        <url-pattern>/OTP_Authentication-ANN008</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_58">
+        <servlet-name>OTP_Authentication-ValidateOTP</servlet-name>
+        <url-pattern>/OTP_Authentication-ValidateOTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_28">
+        <servlet-name>OTP_Authentication-OTPFetchNextNode</servlet-name>
+        <url-pattern>/OTP_Authentication-OTPFetchNextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_128">
+        <servlet-name>GeneralMsg-Announce</servlet-name>
+        <url-pattern>/GeneralMsg-Announce</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_1">
+        <servlet-name>GeneralMsg-Begin</servlet-name>
+        <url-pattern>/GeneralMsg-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_132">
+        <servlet-name>GeneralMsg-FETCH_EMG_MSG</servlet-name>
+        <url-pattern>/GeneralMsg-FETCH_EMG_MSG</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_165">
+        <servlet-name>GeneralMsg-RMN</servlet-name>
+        <url-pattern>/GeneralMsg-RMN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_166">
+        <servlet-name>GeneralMsg-NRMN</servlet-name>
+        <url-pattern>/GeneralMsg-NRMN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_137">
+        <servlet-name>GeneralMsg-Emg_Flag</servlet-name>
+        <url-pattern>/GeneralMsg-Emg_Flag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_125">
+        <servlet-name>GeneralMsg-FETCH_Node</servlet-name>
+        <url-pattern>/GeneralMsg-FETCH_Node</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_142">
+        <servlet-name>GeneralMsg-CheckFlag</servlet-name>
+        <url-pattern>/GeneralMsg-CheckFlag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_159">
+        <servlet-name>GeneralMsg-IDENTIFICATION</servlet-name>
+        <url-pattern>/GeneralMsg-IDENTIFICATION</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_164">
+        <servlet-name>GENERAL_MSG</servlet-name>
+        <url-pattern>/GENERAL_MSG</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_169">
+        <servlet-name>NRMN_Identification</servlet-name>
+        <url-pattern>/NRMN_Identification</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_1">
+        <servlet-name>Authentification-Begin</servlet-name>
+        <url-pattern>/Authentification-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_4">
+        <servlet-name>Authentification-OTP</servlet-name>
+        <url-pattern>/Authentification-OTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_33">
+        <servlet-name>Authentification-Performed_1FA</servlet-name>
+        <url-pattern>/Authentification-Performed_1FA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_21">
+        <servlet-name>Authentification-TPIN</servlet-name>
+        <url-pattern>/Authentification-TPIN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_6">
+        <servlet-name>Authentification-CheckAuthenticationStatus</servlet-name>
+        <url-pattern>/Authentification-CheckAuthenticationStatus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_25">
+        <servlet-name>Authentification-Check2FA</servlet-name>
+        <url-pattern>/Authentification-Check2FA</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_42">
+        <servlet-name>Authentification-TwoFAisDone</servlet-name>
+        <url-pattern>/Authentification-TwoFAisDone</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Authentification_13">
+        <servlet-name>Authentification-CheckHasTPIN</servlet-name>
+        <url-pattern>/Authentification-CheckHasTPIN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_175">
+        <servlet-name>AUTHENTICATION</servlet-name>
+        <url-pattern>/AUTHENTICATION</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_20">
+        <servlet-name>Identification-NRMN_IDENTIFICATIONN</servlet-name>
+        <url-pattern>/Identification-NRMN_IDENTIFICATIONN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_24">
+        <servlet-name>Identification-RMN_IDENTIFICATION</servlet-name>
+        <url-pattern>/Identification-RMN_IDENTIFICATION</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_28">
+        <servlet-name>Identification-RMN</servlet-name>
+        <url-pattern>/Identification-RMN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_29">
+        <servlet-name>Identification-NRMN</servlet-name>
+        <url-pattern>/Identification-NRMN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_38">
+        <servlet-name>Identification-Validate</servlet-name>
+        <url-pattern>/Identification-Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_42">
+        <servlet-name>Identification-LoadValues</servlet-name>
+        <url-pattern>/Identification-LoadValues</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_1">
+        <servlet-name>DynamicFlow-Begin</servlet-name>
+        <url-pattern>/DynamicFlow-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_4">
+        <servlet-name>DynamicFlow-End</servlet-name>
+        <url-pattern>/DynamicFlow-End</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_38">
+        <servlet-name>DynamicFlow-Dynamic</servlet-name>
+        <url-pattern>/DynamicFlow-Dynamic</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_7">
+        <servlet-name>DynamicFlow-DynamicNextNode</servlet-name>
+        <url-pattern>/DynamicFlow-DynamicNextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_12">
+        <servlet-name>DynamicFlow-ANN</servlet-name>
+        <url-pattern>/DynamicFlow-ANN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_44">
+        <servlet-name>DynamicFlow-ExitMenu</servlet-name>
+        <url-pattern>/DynamicFlow-ExitMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_16">
+        <servlet-name>DynamicFlow-MEN</servlet-name>
+        <url-pattern>/DynamicFlow-MEN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_24">
+        <servlet-name>DynamicFlow-Announcement</servlet-name>
+        <url-pattern>/DynamicFlow-Announcement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_249">
+        <servlet-name>DynamicNextNode</servlet-name>
+        <url-pattern>/DynamicNextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_255">
+        <servlet-name>End</servlet-name>
+        <url-pattern>/End</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_278">
+        <servlet-name>ANNOUNCE</servlet-name>
+        <url-pattern>/ANNOUNCE</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_296">
+        <servlet-name>RepeatMenu</servlet-name>
+        <url-pattern>/RepeatMenu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_1">
+        <servlet-name>NINM_FLOW-Begin</servlet-name>
+        <url-pattern>/NINM_FLOW-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_33">
+        <servlet-name>NINM_FLOW-PlayMax</servlet-name>
+        <url-pattern>/NINM_FLOW-PlayMax</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_18">
+        <servlet-name>NINM_FLOW-PlayNI</servlet-name>
+        <url-pattern>/NINM_FLOW-PlayNI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_50">
+        <servlet-name>NINM_FLOW-playNM</servlet-name>
+        <url-pattern>/NINM_FLOW-playNM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_4">
+        <servlet-name>NINM_FLOW-repeat</servlet-name>
+        <url-pattern>/NINM_FLOW-repeat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_5">
+        <servlet-name>NINM_FLOW-NINM_CHECK</servlet-name>
+        <url-pattern>/NINM_FLOW-NINM_CHECK</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_39">
+        <servlet-name>NINM_FLOW-exceed</servlet-name>
+        <url-pattern>/NINM_FLOW-exceed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NINM_FLOW_79">
+        <servlet-name>NINM_FLOW-FetchJson</servlet-name>
+        <url-pattern>/NINM_FLOW-FetchJson</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_227">
+        <servlet-name>NRMN_Identification-ApiRetry</servlet-name>
+        <url-pattern>/NRMN_Identification-ApiRetry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_99">
+        <servlet-name>OTP_Authentication-OtpRetry</servlet-name>
+        <url-pattern>/OTP_Authentication-OtpRetry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_1">
+        <servlet-name>NIMM_API-Begin</servlet-name>
+        <url-pattern>/NIMM_API-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_4">
+        <servlet-name>NIMM_API-retry</servlet-name>
+        <url-pattern>/NIMM_API-retry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_13">
+        <servlet-name>NIMM_API-repeat</servlet-name>
+        <url-pattern>/NIMM_API-repeat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_14">
+        <servlet-name>NIMM_API-max</servlet-name>
+        <url-pattern>/NIMM_API-max</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_17">
+        <servlet-name>NIMM_API-NM</servlet-name>
+        <url-pattern>/NIMM_API-NM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_23">
+        <servlet-name>NIMM_API-Fetch</servlet-name>
+        <url-pattern>/NIMM_API-Fetch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NIMM_API_29">
+        <servlet-name>NIMM_API-maxP</servlet-name>
+        <url-pattern>/NIMM_API-maxP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_365">
+        <servlet-name>CreditCard1</servlet-name>
+        <url-pattern>/CreditCard1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_116">
+        <servlet-name>OTP_Authentication-SuccessOTP</servlet-name>
+        <url-pattern>/OTP_Authentication-SuccessOTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_374">
+        <servlet-name>BankingServices1</servlet-name>
+        <url-pattern>/BankingServices1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_377">
+        <servlet-name>TPIN1</servlet-name>
+        <url-pattern>/TPIN1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_382">
+        <servlet-name>LoadValues</servlet-name>
+        <url-pattern>/LoadValues</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_388">
+        <servlet-name>Main_Menu</servlet-name>
+        <url-pattern>/Main_Menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_204">
+        <servlet-name>TPIN_Authentication-Success</servlet-name>
+        <url-pattern>/TPIN_Authentication-Success</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_396">
+        <servlet-name>CheckNode</servlet-name>
+        <url-pattern>/CheckNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_400">
+        <servlet-name>Validate</servlet-name>
+        <url-pattern>/Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_69">
+        <servlet-name>DynamicFlow-ApiFail</servlet-name>
+        <url-pattern>/DynamicFlow-ApiFail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_419">
+        <servlet-name>InsertCallHistory</servlet-name>
+        <url-pattern>/InsertCallHistory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_207">
+        <servlet-name>TPIN_Authentication-setRetry</servlet-name>
+        <url-pattern>/TPIN_Authentication-setRetry</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_130">
+        <servlet-name>OTP_Authentication-OtpRetrySet</servlet-name>
+        <url-pattern>/OTP_Authentication-OtpRetrySet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_167">
+        <servlet-name>RMN_Identification-CCORACCMENU</servlet-name>
+        <url-pattern>/RMN_Identification-CCORACCMENU</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_177">
+        <servlet-name>RMN_Identification-RetrySet</servlet-name>
+        <url-pattern>/RMN_Identification-RetrySet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_185">
+        <servlet-name>RMN_Identification-Maxtries</servlet-name>
+        <url-pattern>/RMN_Identification-Maxtries</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_187">
+        <servlet-name>RMN_Identification-SetRery</servlet-name>
+        <url-pattern>/RMN_Identification-SetRery</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_197">
+        <servlet-name>RMN_Identification-NINM</servlet-name>
+        <url-pattern>/RMN_Identification-NINM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_209">
+        <servlet-name>RMN_Identification-NM</servlet-name>
+        <url-pattern>/RMN_Identification-NM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_79">
+        <servlet-name>DynamicFlow-SetRetrys</servlet-name>
+        <url-pattern>/DynamicFlow-SetRetrys</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_89">
+        <servlet-name>DynamicFlow-NINM</servlet-name>
+        <url-pattern>/DynamicFlow-NINM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_221">
+        <servlet-name>TPIN_Authentication-TpinFailed</servlet-name>
+        <url-pattern>/TPIN_Authentication-TpinFailed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_143">
+        <servlet-name>OTP_Authentication-OtpFailed</servlet-name>
+        <url-pattern>/OTP_Authentication-OtpFailed</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_1">
+        <servlet-name>ApiFail-Begin</servlet-name>
+        <url-pattern>/ApiFail-Begin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_17">
+        <servlet-name>ApiFail-Transfer</servlet-name>
+        <url-pattern>/ApiFail-Transfer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_4">
+        <servlet-name>ApiFail-ApiFlagFetch</servlet-name>
+        <url-pattern>/ApiFail-ApiFlagFetch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_9">
+        <servlet-name>ApiFail-ApiFAILED</servlet-name>
+        <url-pattern>/ApiFail-ApiFAILED</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_11">
+        <servlet-name>ApiFail-Ann</servlet-name>
+        <url-pattern>/ApiFail-Ann</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_DynamicFlow_99">
+        <servlet-name>DynamicFlow-TransferAgent</servlet-name>
+        <url-pattern>/DynamicFlow-TransferAgent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_30">
+        <servlet-name>ApiFail-Api</servlet-name>
+        <url-pattern>/ApiFail-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_NRMN_Identification_253">
+        <servlet-name>NRMN_Identification-Api</servlet-name>
+        <url-pattern>/NRMN_Identification-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_39">
+        <servlet-name>ApiFail-ApiFail</servlet-name>
+        <url-pattern>/ApiFail-ApiFail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_RMN_Identification_222">
+        <servlet-name>RMN_Identification-Api</servlet-name>
+        <url-pattern>/RMN_Identification-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_227">
+        <servlet-name>TPIN_Authentication-Api</servlet-name>
+        <url-pattern>/TPIN_Authentication-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_149">
+        <servlet-name>OTP_Authentication-Api</servlet-name>
+        <url-pattern>/OTP_Authentication-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_59">
+        <servlet-name>Identification-Api</servlet-name>
+        <url-pattern>/Identification-Api</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_Identification_67">
+        <servlet-name>Identification-end</servlet-name>
+        <url-pattern>/Identification-end</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_GeneralMsg_199">
+        <servlet-name>GeneralMsg-end</servlet-name>
+        <url-pattern>/GeneralMsg-end</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_157">
+        <servlet-name>OTP_Authentication-MaxOTP</servlet-name>
+        <url-pattern>/OTP_Authentication-MaxOTP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_439">
+        <servlet-name>Disconnect</servlet-name>
+        <url-pattern>/Disconnect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_443">
+        <servlet-name>HangUp</servlet-name>
+        <url-pattern>/HangUp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_447">
+        <servlet-name>Transfer</servlet-name>
+        <url-pattern>/Transfer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_163">
+        <servlet-name>OTP_Authentication-ApiFail01</servlet-name>
+        <url-pattern>/OTP_Authentication-ApiFail01</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_ApiFail_41">
+        <servlet-name>ApiFail-Flag</servlet-name>
+        <url-pattern>/ApiFail-Flag</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_main_470">
+        <servlet-name>GotoTPIN</servlet-name>
+        <url-pattern>/GotoTPIN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_176">
+        <servlet-name>OTP_Authentication-TPIN</servlet-name>
+        <url-pattern>/OTP_Authentication-TPIN</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_OTP_Authentication_177">
+        <servlet-name>OTP_Authentication-CheckNextNode</servlet-name>
+        <url-pattern>/OTP_Authentication-CheckNextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_235">
+        <servlet-name>TPIN_Authentication-CheckNextNode</servlet-name>
+        <url-pattern>/TPIN_Authentication-CheckNextNode</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping id="SAGE-callflow-servletmapping_TPIN_Authentication_244">
+        <servlet-name>TPIN_Authentication-TPIN</servlet-name>
+        <url-pattern>/TPIN_Authentication-TPIN</url-pattern>
+    </servlet-mapping>
+</web-app>

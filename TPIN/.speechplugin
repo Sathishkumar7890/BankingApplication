@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<propertystore id="sage" version="1.0">
+    <propertymap/>
+    <nestedpropertystore>
+        <propertystore id="general" version="1.0">
+            <propertymap/>
+            <nestedpropertystore>
+                <propertystore id="project" version="1.0">
+                    <propertymap>
+                        <property name="iconlg" value="icons/defaultapplicationlg.gif" version="1.0"/>
+                        <property name="logpropertiesupdated" value="3.0.17x2" version="1.0"/>
+                        <property name="iconsm" value="icons/defaultapplicationsm.gif" version="1.0"/>
+                        <property name="name" value="TPIN" version="1.0"/>
+                        <property name="version" value="1.0.0" version="1.0"/>
+                    </propertymap>
+                    <nestedpropertystore/>
+                </propertystore>
+                <propertystore id="ide" version="1.0">
+                    <propertymap>
+                        <property name="version" value="420" version="1.0"/>
+                    </propertymap>
+                    <nestedpropertystore/>
+                </propertystore>
+            </nestedpropertystore>
+        </propertystore>
+        <propertystore id="runtimecommon" version="1.0">
+            <propertymap/>
+            <nestedpropertystore>
+                <propertystore id="scert" version="1.0">
+                    <propertymap>
+                        <property name="version" value="08.12.11.01" version="1.0"/>
+                    </propertymap>
+                    <nestedpropertystore/>
+                </propertystore>
+            </nestedpropertystore>
+        </propertystore>
+        <propertystore id="runtime" version="1.0">
+            <propertymap/>
+            <nestedpropertystore>
+                <propertystore id="scert" version="1.0">
+                    <propertymap>
+                        <property name="version" value="08.12.11.01" version="1.0"/>
+                    </propertymap>
+                    <nestedpropertystore/>
+                </propertystore>
+                <propertystore id="tomcat" version="1.0">
+                    <propertymap>
+                        <property name="version" value="tomcatv9" version="1.0"/>
+                    </propertymap>
+                    <nestedpropertystore/>
+                </propertystore>
+            </nestedpropertystore>
+        </propertystore>
+    </nestedpropertystore>
+</propertystore>
